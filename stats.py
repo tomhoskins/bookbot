@@ -18,3 +18,13 @@ def get_char_counts(text):
             continue
         chars[key] = 1
     return chars
+
+def sort_on_num(items):
+    return items["num"]
+
+def sort_char_counts(char_counts):
+    sorted_char_counts = []
+    for key,value in char_counts.items():
+        sorted_char_counts.append({"char":key, "num":value})
+    sorted_char_counts.sort(reverse=True,key=sort_on_num)
+    return sorted_char_counts
